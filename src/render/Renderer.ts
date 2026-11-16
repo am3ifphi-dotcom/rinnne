@@ -152,8 +152,16 @@ export class Renderer {
     ctx.fill();
   }
   /* ════════════ 状態2〜4：黄金の虚空と仏 ════════════ */
+  /**
+   * 仏の顔スケール（px / 顔単位）。
+   * 顔は左右対称に描かれるため全幅はおよそ 2 倍。頭頂から顎までを含めて
+   * 画面に収まるよう、縦横比から上限を決める（端末で頭が切れないように）。
+   */
   private deityScale(unit: number): number {
-    return unit * (this.w >= this.h ? 0.56 : 0.64);
+    void unit;
+    return this.h >= this.w
+      ? Math.min(this.w * 0.43, this.h * 0.34)
+      : Math.min(this.w * 0.34, this.h * 0.42);
   }
   private sceneDeity(s: Readonly<FrameState>, cx: number, cy: number, unit: number, reach: number): void {
     const m = s.morph;

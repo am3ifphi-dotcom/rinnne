@@ -1,0 +1,26 @@
+{
+  "name": "shouten",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "昇天 ― 渦巻く雲を抜け、仏に見える。浮世絵と地獄草紙の筆致で描く、完全プロシージャルなインタラクティブ・ホラーアート。",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "smoke": "npm i --no-save @napi-rs/canvas && esbuild scripts/smoke.ts --bundle --platform=node --format=esm --external:@napi-rs/canvas --outfile=.smoke/smoke.mjs --log-level=warning && node .smoke/smoke.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.1",
+    "@vitejs/plugin-react": "^5.1.0",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12"
+  }
+}
