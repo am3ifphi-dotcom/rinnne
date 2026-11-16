@@ -1,0 +1,16 @@
+# 依存とビルド生成物
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Vercel
+.vercel
+
+# ツール類
+.DS_Store
+*.log
+npm-debug.log*
+.tmp*/
+coverage/
+playwright-report/
